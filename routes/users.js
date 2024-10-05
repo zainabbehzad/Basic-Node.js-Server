@@ -2,36 +2,41 @@ const express = require('express');
 
 const router = express.Router();
 
-let books = [
-  { id: 1, title: 'The Alchemist', author: 'Paulo Coelho' },
-  { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+// Sample dataset (users)
+let users = [
+  { id: 1, name: 'farwa' },
+  { id: 2, name: 'fariha' },
 ];
 
+// GET all users
 router.get('/', (req, res) => {
-  res.json(books);
+  res.json(users);
 });
 
+// POST new user
 router.post('/', (req, res) => {
-  const newBook = req.body;
-  books.push(newBook);
-  res.status(201).json(newBook);
+  const newUser = req.body;
+  users.push(newUser);
+  res.status(201).json(newUser);
 });
 
+// PUT update user
 router.put('/:id', (req, res) => {
-  const bookId = parseInt(req.params.id, 10);
-  const updatedBook = req.body;
-  books = books.map(
-    (book) => (book.id === bookId ? { ...book, ...updatedBook } : book)
-  );
-  res.json(updatedBook);
+  const userId = parseInt(req.params.id, 10); // Added radix parameter
+  const updatedUser = req.body;
+  users = users.map(
+    (user) => (user.id === userId ? updatedUser : user),
+  ); // Line break added
+  res.json(updatedUser);
 });
 
+// DELETE user
 router.delete('/:id', (req, res) => {
-  const bookId = parseInt(req.params.id, 10);
-  books = books.filter(
-    (book) => book.id !== bookId
-  );
-  res.json({ message: 'Book deleted' });
+  const userId = parseInt(req.params.id, 10); // Added radix parameter
+  users = users.filter(
+    (user) => user.id !== userId,
+  ); // Line break added
+  res.json({ message: 'User deleted' });
 });
 
 module.exports = router;
