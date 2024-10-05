@@ -1,7 +1,7 @@
 const books = [
   {
     id: 1,
-    title: 'The Alchemist', 
+    title: 'The Alchemist',
     author: 'Paulo Coelho',
     rating: 5,
     review: 'A beautiful tale about following your dreams.',
@@ -74,19 +74,22 @@ const books = [
 document.addEventListener('DOMContentLoaded', () => {
   const bookListElement = document.getElementById('bookItems');
   const searchBar = document.getElementById('searchBar');
+  const bookForm = document.getElementById('newBookForm');
+
   displayBooks(books);
 
-  searchBar.addEventListener(('input'), () => {
+  searchBar.addEventListener('input', () => {
     const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter(book => book.title.toLowerCase().includes(query)
-      ||
-      book.author.toLowerCase().includes(query));
+    const filteredBooks = books.filter(book => 
+      book.title.toLowerCase().includes(query) || 
+      book.author.toLowerCase().includes(query)
+    );
     displayBooks(filteredBooks);
   });
 
-  const bookForm = document.getElementById('newBookForm');
   bookForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const bookTitle = document.getElementById('bookTitle').value;
     const bookAuthor = document.getElementById('bookAuthor').value;
     const bookRating = document.getElementById('bookRating').value;
@@ -115,7 +118,7 @@ function displayBooks(books) {
     return;
   }
 
-  books.forEach((book) => {
+  books.forEach(book => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <strong>Title:</strong> ${book.title} <br>
@@ -130,7 +133,7 @@ function displayBooks(books) {
 }
 
 function borrowBook(id, button) {
-  const book = books.find((b) => b.id === id);
+  const book = books.find(b => b.id === id);
   if (book) {
     alert(`You borrowed "${book.title}" by ${book.author}.`);
     button.style.backgroundColor = 'green';
@@ -138,7 +141,7 @@ function borrowBook(id, button) {
 }
 
 function deleteBook(id, button) {
-  const index = books.findIndex((b) => b.id === id);
+  const index = books.findIndex(b => b.id === id);
   if (index !== -1) {
     books.splice(index, 1);
     displayBooks(books);
