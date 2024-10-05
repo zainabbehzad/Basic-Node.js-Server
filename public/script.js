@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function displayBooks(books) {
   const bookListElement = document.getElementById('bookItems');
   bookListElement.innerHTML = '';
+  
   if (books.length === 0) {
     bookListElement.innerHTML = '<li>No books found</li>';
     return;
