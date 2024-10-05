@@ -1,73 +1,73 @@
 const books = [
-  { 
-    id: 1, 
+  {
+    id: 1,
     title: 'The Alchemist', 
-    author: 'Paulo Coelho', 
-    rating: 5, 
-    review: 'A beautiful tale about following your dreams.' 
+    author: 'Paulo Coelho',
+    rating: 5,
+    review: 'A beautiful tale about following your dreams.',
   },
-  { 
-    id: 2, 
-    title: 'To Kill a Mockingbird', 
-    author: 'Harper Lee', 
-    rating: 5, 
-    review: 'A powerful exploration of morality and human behavior.' 
+  {
+    id: 2,
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    rating: 5,
+    review: 'A powerful exploration of morality and human behavior.',
   },
-  { 
-    id: 3, 
-    title: '1984', 
-    author: 'George Orwell', 
-    rating: 4, 
-    review: 'A chilling depiction of totalitarianism and surveillance.' 
+  {
+    id: 3,
+    title: '1984',
+    author: 'George Orwell',
+    rating: 4,
+    review: 'A chilling depiction of totalitarianism and surveillance.',
   },
-  { 
-    id: 4, 
-    title: 'Pride and Prejudice', 
-    author: 'Jane Austen', 
-    rating: 5, 
-    review: 'A classic romantic novel that critiques societal norms.' 
+  {
+    id: 4,
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    rating: 5,
+    review: 'A classic romantic novel that critiques societal norms.',
   },
-  { 
-    id: 5, 
-    title: 'The Great Gatsby', 
-    author: 'F. Scott Fitzgerald', 
-    rating: 4, 
-    review: 'A tragic story of love and ambition in the Jazz Age.' 
+  {
+    id: 5,
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    rating: 4,
+    review: 'A tragic story of love and ambition in the Jazz Age.',
   },
-  { 
-    id: 6, 
-    title: 'Moby Dick', 
-    author: 'Herman Melville', 
-    rating: 4, 
-    review: 'An epic tale of obsession and the sea.' 
+  {
+    id: 6,
+    title: 'Moby Dick',
+    author: 'Herman Melville',
+    rating: 4,
+    review: 'An epic tale of obsession and the sea.',
   },
-  { 
-    id: 7, 
-    title: 'The Catcher in the Rye', 
-    author: 'J.D. Salinger', 
-    rating: 4, 
-    review: 'A story about teenage angst and alienation.' 
+  {
+    id: 7,
+    title: 'The Catcher in the Rye',
+    author: 'J.D. Salinger',
+    rating: 4,
+    review: 'A story about teenage angst and alienation.',
   },
-  { 
-    id: 8, 
-    title: 'The Hobbit', 
-    author: 'J.R.R. Tolkien', 
-    rating: 5, 
-    review: 'A delightful adventure in a richly imagined world.' 
+  {
+    id: 8,
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    rating: 5,
+    review: 'A delightful adventure in a richly imagined world.',
   },
-  { 
-    id: 9, 
-    title: 'Brave New World', 
-    author: 'Aldous Huxley', 
-    rating: 4, 
-    review: 'A thought-provoking look at a dystopian future.' 
+  {
+    id: 9,
+    title: 'Brave New World',
+    author: 'Aldous Huxley',
+    rating: 4,
+    review: 'A thought-provoking look at a dystopian future.',
   },
-  { 
-    id: 10, 
-    title: 'The Diary of a Young Girl', 
-    author: 'Anne Frank', 
-    rating: 5, 
-    review: 'A poignant account of life during the Holocaust.' 
+  {
+    id: 10,
+    title: 'The Diary of a Young Girl',
+    author: 'Anne Frank',
+    rating: 5,
+    review: 'A poignant account of life during the Holocaust.',
   },
 ];
 
@@ -76,12 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
   displayBooks(books);
 
-  searchBar.addEventListener('input', () => {
+  searchBar.addEventListener(('input'), () => {
     const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter(book =>
-      book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query)
-    );
+    const filteredBooks = books.filter(book => book.title.toLowerCase().includes(query)
+      ||
+      book.author.toLowerCase().includes(query));
     displayBooks(filteredBooks);
   });
 
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function displayBooks(books) {
   const bookListElement = document.getElementById('bookItems');
   bookListElement.innerHTML = '';
-  
+
   if (books.length === 0) {
     bookListElement.innerHTML = '<li>No books found</li>';
     return;
