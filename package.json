@@ -1,14 +1,18 @@
 {
-  "dependencies": {
-    "express": "^4.21.0"
-  },
   "name": "basic-node.js-server",
   "version": "1.0.0",
   "description": "This project is a simple Node.js server designed to demonstrate fundamental server-side programming concepts. It utilizes Express.js to handle HTTP requests and responses, providing a basic RESTful API.",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   },
   "keywords": [],
   "author": "",
