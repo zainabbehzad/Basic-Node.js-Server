@@ -118,10 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchBar.addEventListener('input', () => {
     const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter((book) =>
-      book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query)
-    );
+    const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(query)
+    ||
+      book.author.toLowerCase().includes(query));
     displayBooks(filteredBooks);
   });
 
