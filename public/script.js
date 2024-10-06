@@ -2,7 +2,7 @@ const books = [
   {
     id: 1,
     title: 'The Alchemist',
-    author: 'Paulo Coelho',
+    author: 'Paulo Coelho', 
     rating: 5,
     review: 'A beautiful tale about following your dreams.',
   },
@@ -32,7 +32,7 @@ const books = [
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     rating: 4,
-    review: 'A tragic story of love and ambition in the Jazz Age.',
+    review: 'A tragic story of love and ambition in the Jazz Age.'
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const books = [
   },
   {
     id: 9,
-    title: 'Brave New World',
+    title: 'Brave New World', 
     author: 'Aldous Huxley',
     rating: 4,
     review: 'A thought-provoking look at a dystopian future.',
@@ -80,8 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchBar.addEventListener('input', () => {
     const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query));
+    const filteredBooks = books.filter((book) => 
+      book.title.toLowerCase().includes(query) || 
+      book.author.toLowerCase().includes(query)
+    );
     displayBooks(filteredBooks);
   });
 
@@ -133,13 +135,13 @@ function displayBooks(books) {
 function borrowBook(id, button) {
   const book = books.find((b) => b.id === id);
   if (book) {
-    alert(`You borrowed "${book.title}" by ${book.author}.`);
+    console.log(`You borrowed "${book.title}" by ${book.author}.`);
     button.style.backgroundColor = 'green';
   }
 }
 
 function deleteBook(id, button) {
-  const index = books.findIndex((b) => b.id === id);
+  const index = books.findIndex(b => b.id === id);
   if (index !== -1) {
     books.splice(index, 1);
     displayBooks(books);
