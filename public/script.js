@@ -80,10 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchBar.addEventListener('input', () => {
     const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter(book => 
-      book.title.toLowerCase().includes(query) || 
-      book.author.toLowerCase().includes(query)
-    );
+    const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(query) ||
+      book.author.toLowerCase().includes(query));
     displayBooks(filteredBooks);
   });
 
@@ -118,7 +116,7 @@ function displayBooks(books) {
     return;
   }
 
-  books.forEach(book => {
+  books.forEach((book) => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
       <strong>Title:</strong> ${book.title} <br>
@@ -133,7 +131,7 @@ function displayBooks(books) {
 }
 
 function borrowBook(id, button) {
-  const book = books.find(b => b.id === id);
+  const book = books.find((b) => b.id === id);
   if (book) {
     alert(`You borrowed "${book.title}" by ${book.author}.`);
     button.style.backgroundColor = 'green';
@@ -141,7 +139,7 @@ function borrowBook(id, button) {
 }
 
 function deleteBook(id, button) {
-  const index = books.findIndex(b => b.id === id);
+  const index = books.findIndex((b) => b.id === id);
   if (index !== -1) {
     books.splice(index, 1);
     displayBooks(books);
