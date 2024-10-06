@@ -111,7 +111,6 @@ function deleteBook(id, button) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const bookListElement = document.getElementById('bookItems');
   const searchBar = document.getElementById('searchBar');
   const bookForm = document.getElementById('newBookForm');
 
