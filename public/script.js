@@ -82,13 +82,13 @@ function displayBooks(books) {
 
   books.forEach((book) => {
     const listItem = document.createElement('li');
-    listItem.innerHTML =
-      `<strong>Title:</strong> ${book.title} <br>
-       <strong>Author:</strong> ${book.author} <br>
-       <strong>Rating:</strong> ${book.rating} <br>
-       <strong>Review:</strong> ${book.review} <br>
-       <button onclick="borrowBook(${book.id}, this)">Borrow</button>
-       <button onclick="deleteBook(${book.id}, this)">Delete</button>`;
+    listItem.innerHTML = `
+      <strong>Title:</strong> ${book.title} <br>
+      <strong>Author:</strong> ${book.author} <br>
+      <strong>Rating:</strong> ${book.rating} <br>
+      <strong>Review:</strong> ${book.review} <br>
+      <button onclick="borrowBook(${book.id}, this)">Borrow</button>
+      <button onclick="deleteBook(${book.id}, this)">Delete</button>`;
     bookListElement.appendChild(listItem);
   });
 }
