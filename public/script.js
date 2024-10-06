@@ -71,44 +71,6 @@ const books = [
   },
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-  const bookListElement = document.getElementById('bookItems');
-  const searchBar = document.getElementById('searchBar');
-  const bookForm = document.getElementById('newBookForm');
-
-  displayBooks(books);
-
-  searchBar.addEventListener('input', () => {
-    const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter((book) =>
-      book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query)
-    );
-    displayBooks(filteredBooks);
-  });
-
-  bookForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const bookTitle = document.getElementById('bookTitle').value;
-    const bookAuthor = document.getElementById('bookAuthor').value;
-    const bookRating = document.getElementById('bookRating').value;
-    const bookReview = document.getElementById('bookReview').value;
-
-    const newBookData = {
-      id: Date.now(),
-      title: bookTitle,
-      author: bookAuthor,
-      rating: Number(bookRating),
-      review: bookReview,
-    };
-
-    books.push(newBookData);
-    displayBooks(books);
-    bookForm.reset();
-  });
-});
-
 function displayBooks(books) {
   const bookListElement = document.getElementById('bookItems');
   bookListElement.innerHTML = '';
@@ -147,3 +109,41 @@ function deleteBook(id, button) {
     button.style.backgroundColor = 'green';
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const bookListElement = document.getElementById('bookItems');
+  const searchBar = document.getElementById('searchBar');
+  const bookForm = document.getElementById('newBookForm');
+
+  displayBooks(books);
+
+  searchBar.addEventListener('input', () => {
+    const query = searchBar.value.toLowerCase();
+    const filteredBooks = books.filter((book) =>
+      book.title.toLowerCase().includes(query) ||
+      book.author.toLowerCase().includes(query)
+    );
+    displayBooks(filteredBooks);
+  });
+
+  bookForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const bookTitle = document.getElementById('bookTitle').value;
+    const bookAuthor = document.getElementById('bookAuthor').value;
+    const bookRating = document.getElementById('bookRating').value;
+    const bookReview = document.getElementById('bookReview').value;
+
+    const newBookData = {
+      id: Date.now(),
+      title: bookTitle,
+      author: bookAuthor,
+      rating: Number(bookRating),
+      review: bookReview,
+    };
+
+    books.push(newBookData);
+    displayBooks(books);
+    bookForm.reset();
+  });
+});
