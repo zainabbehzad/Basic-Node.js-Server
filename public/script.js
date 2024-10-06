@@ -96,7 +96,7 @@ function displayBooks(books) {
 function borrowBook(id, button) {
   const book = books.find((b) => b.id === id);
   if (book) {
-    console.log(`You borrowed "${book.title}" by ${book.author}.`);
+    console.log(`You borrowed "${book.title}" by ${book.author}.`); // Consider removing this line if you want to avoid the warning
     button.style.backgroundColor = 'green';
   }
 }
