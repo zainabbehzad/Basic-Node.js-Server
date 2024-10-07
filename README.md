@@ -10,7 +10,7 @@
 
 
 **Live Demo**:
-
+basic-node-js-server-aajzfijoo-zainab-behzads-projects.vercel.app
 
 
 
@@ -58,11 +58,12 @@ basic-nodejs-server/
 
 - **Zainab Behzad** - 
 
-[GitHub Profile]([zainabbehzad])
+-LinkedIn: [Zainab Behzad]
 
-[Linkdin]( [Zainab Behzad])
+-GitHub:[zainabbehzad]
 
-[Email]([zainabbehzad03@gmail.com])
+-Email:[zainabbehzad03@gmail.com]
+
 
 
 Installation 💻
