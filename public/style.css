@@ -1,0 +1,154 @@
+/* Universal selector to reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* Full height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.main-container {
+  max-width: 900px;
+  width: 95%;
+  margin: 0; /* Remove margin */
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px; /* Reduced padding for better fit on small screens */
+  text-align: left;
+  overflow: hidden; /* Prevent overflow */
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #6a5acd;
+  margin-bottom: 20px; /* Adjusted margin */
+  font-weight: 700;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px; /* Adjusted margin */
+  color: #4b0082;
+  border-bottom: 2px solid #6a5acd;
+  padding-bottom: 5px;
+}
+
+#bookItems {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Reset margin */
+}
+
+#bookItems li {
+  font-size: 1.1rem;
+  padding: 15px;
+  background-color: #e6e6fa;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#bookItems li:hover {
+  transform: scale(1.02);
+  background-color: #dcdcdc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 20px 0;
+}
+
+form label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #4b0082;
+}
+
+form input,
+form textarea {
+  font-size: 1rem;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #b0c4de;
+  border-radius: 8px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #6a5acd;
+  outline: none;
+}
+
+form button {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background-color: #483d8b;
+  transform: translateY(-1px);
+}
+
+.error-message,
+.success-message {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .main-container {
+    padding: 10px; /* Further reduce padding */
+    margin: 0; /* Ensure no margins */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjusted font size */
+    margin: 10px 0; /* Adjusted margin */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjusted font size */
+    margin: 10px 0; /* Adjusted margin */
+  }
+
+  form input,
+  form textarea {
+    padding: 10px; /* Adjusted padding */
+  }
+
+  form button {
+    padding: 10px; /* Adjusted button padding */
+  }
+
+  #bookItems li {
+    font-size: 1rem; /* Smaller font size for list items */
+    padding: 10px; /* Adjusted padding for list items */
+  }
+}

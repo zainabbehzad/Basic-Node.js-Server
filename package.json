@@ -1,0 +1,26 @@
+{
+  "name": "digital-library-server",
+  "version": "1.0.0",
+  "description": "This project implements a digital library server using Node.js and Express.js. It serves static content, handles multiple HTTP requests, and allows basic CRUD operations on a collection of books.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "library",
+    "nodejs",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.3.7",
+    "express": "^4.21.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
