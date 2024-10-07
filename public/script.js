@@ -93,22 +93,39 @@ function displayBooks(books) {
   });
 }
 
-function borrowBook(id, button) {
+window.borrowBook = function(id, button) {
   const book = books.find((b) => b.id === id);
   if (book) {
     // console.log(`You borrowed "${book.title}" by ${book.author}.`); // Removed to avoid warning
     button.style.backgroundColor = 'green';
   }
-}
+};
 
-function deleteBook(id, button) {
+window.deleteBook = function(id, button) {
   const index = books.findIndex((b) => b.id === id);
   if (index !== -1) {
     books.splice(index, 1);
     displayBooks(books);
     button.style.backgroundColor = 'green';
   }
-}
+};
+
+window.borrowBook = function(id, button) {
+  const book = books.find((b) => b.id === id);
+  if (book) {
+    // console.log(`You borrowed "${book.title}" by ${book.author}.`); // Remove to avoid warning
+    button.style.backgroundColor = 'green';
+  }
+};
+
+window.deleteBook = function(id, button) {
+  const index = books.findIndex((b) => b.id === id);
+  if (index !== -1) {
+    books.splice(index, 1);
+    displayBooks(books);
+    button.style.backgroundColor = 'green';
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
@@ -118,10 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchBar.addEventListener('input', () => {
     const query = searchBar.value.toLowerCase();
-    const filteredBooks = books.filter((book) =>
-      book.title.toLowerCase().includes(query) ||
-      book.author.toLowerCase().includes(query)
-    );
+    const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(query) 
+    ||
+      book.author.toLowerCase().includes(query),);
     displayBooks(filteredBooks);
   });
 
